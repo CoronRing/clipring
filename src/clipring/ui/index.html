@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipBot UI - Next-Gen Clipboard Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for some quick icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Interactive Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo glitch-text" data-text="CB-AGENT">CB-AGENT</div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#features">Features</a>
+            <a href="#launch-section" class="neon-link">Launch Terminal</a>
+        </div>
+    </nav>
+
+    <!-- LANDING PAGE VIEW -->
+    <div id="landing-view">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero-container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="CLIPBOARD SUPREMACY">CLIPBOARD SUPREMACY</h1>
+                <p class="subtitle typing-effect">Automating LLM context from your clipboard.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="cyber-btn outline">Scan Features</a>
+                    <a href="#launch-section" class="cyber-btn solid">Initialize</a>
+                </div>
+            </div>
+            <!-- Floating element -->
+            <div class="floating-orb"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-container view-section">
+            <h2 class="section-title neon-text">CORE MODULES</h2>
+            <div class="cards-grid">
+                
+                <div class="feature-card" data-tilt>
+                    <div class="icon-wrapper"><ion-icon name="images-outline"></ion-icon></div>
+                    <h3>Auto-Saver Engine</h3>
+                    <p>Continuously monitors system clipboard. Instantly detects and persists copied image data to local drives.</p>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="icon-wrapper"><ion-icon name="code-slash-outline"></ion-icon></div>
+                    <h3>WebP HTML Recovery</h3>
+                    <p>Advanced regex-based extraction to salvage animated WebP payloads deeply embedded in browser HTML clipboard data.</p>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="icon-wrapper"><ion-icon name="hardware-chip-outline"></ion-icon></div>
+                    <h3>LLM Nerve Center</h3>
+                    <p>Trigger complex neural workflows (GPT-4o, Claude 3.5 Sonnet) identically to terminal commands, simply by copying text tokens.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Launch Panel -->
+        <section id="launch-section" class="launch-container view-section">
+            <div class="launch-box" data-tilt>
+                <h2 class="neon-text blink">AWAITING IGNITION</h2>
+                <p>Warning: Initializing the dashboard will hijack spatial context.</p>
+                <div class="progress-bar-container hidden" id="boot-progress">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <button id="initialize-btn" class="massive-cyber-btn">
+                    <ion-icon name="power-outline"></ion-icon> BOOT SEQUENCE
+                </button>
+            </div>
+        </section>
+
+    </div> <!-- End Landing View -->
+
+
+    <!-- DASHBOARD VIEW -->
+    <div id="dashboard-view" class="dashboard hidden">
+        <div class="sidebar">
+            <h2 class="neon-text glitch-text" data-text="SYSTEM STATS">SYSTEM STATS</h2>
+            
+            <div class="stat-card">
+                <ion-icon name="save-outline"></ion-icon>
+                <div class="stat-info">
+                    <span class="stat-label">IMG SAVED</span>
+                    <span class="stat-number" id="saved-count">0</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <ion-icon name="server-outline"></ion-icon>
+                <div class="stat-info">
+                    <span class="stat-label">TOKENS STREAMED</span>
+                    <span class="stat-number" id="token-count">0</span>
+                </div>
+            </div>
+
+            <!-- Configuration Toggles -->
+            <div class="config-panel">
+                <h3>CONFIGURATION</h3>
+                <div class="toggle-row">
+                    <span>WebP -> GIF</span>
+                    <label class="switch">
+                      <input type="checkbox" id="toggle-webp">
+                      <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span>Active Model</span>
+                    <select class="cyber-select" id="model-select">
+                        <option value="gpt4o">GPT-4o Omnimodal</option>
+                        <option value="o1">OpenAI O1-Preview</option>
+                        <option value="claude">Claude 3.5 Sonnet</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Interaction triggers -->
+            <button id="sim-copy-btn" class="cyber-btn solid mini-margin">
+                <ion-icon name="copy-outline"></ion-icon> Simulate Copy Trigger
+            </button>
+            <button id="catch-btn" class="cyber-btn outline mini-margin">
+                <ion-icon name="game-controller-outline"></ion-icon> Play Mini-Game
+            </button>
+        </div>
+
+        <div class="main-panel">
+            <div class="panel-header">
+                <h1 class="neon-text">LIVE CONSOLE</h1>
+                <span class="status-indicator">ONLINE</span>
+            </div>
+            <div class="terminal container-tilt">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body" id="console-output">
+                    > [SYS] Handshake successful...<br>
+                    > [SYS] Monitoring clipboard hooks.<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Mini Game Overlay -->
+    <div id="minigame" class="minigame-overlay hidden">
+        <h2 class="score-display">Intercept Vectors. Score: <span id="game-score">0</span></h2>
+        <button id="end-game" class="cyber-btn solid exit-btn">EXIT SIMULATION</button>
+        <div id="game-area"></div>
+    </div>
+
+    <!-- Glitch Overlay div used for transitions -->
+    <div id="screen-glitch" class="screen-glitch hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
