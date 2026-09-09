@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Refactored project into standard `src/clipring` layout with `hatchling` build backend.
-- Replaced hardcoded paths (`C:\Random\ex_image`, `C:\Users\guanz\...`) with environment-driven cross-platform resolution defaulting to `~/Pictures/ClipRing`.
+- Replaced hardcoded legacy paths (`C:\Random\...`, static screenshots folder) with environment-driven cross-platform resolution defaulting to `~/Pictures/ClipRing`.
 - Replaced Windows-only PowerShell System.Windows.Forms balloon tips with cross-platform notification dispatchers.
 - Modernized legacy scripts (`screenshot.py`, `clipboard_request_maker_simple.py`) as backward-compatible shims pointing to `clipring`.
 

@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/CoronRing/clipring/main/docs/assets/banner.svg" alt="ClipRing — The reactive clipboard input engine for Python" width="820">
+
 <h1>ClipRing</h1>
 
 <p><strong>A modern cross-platform clipboard input engine, multi-format event watcher, and automated image extractor for Python.</strong></p>
@@ -202,6 +204,14 @@ clipring autosaver --dir ~/Pictures/Captures --gif
 # Launch the interactive Cyberpunk Web Dashboard
 clipring ui --port 8844
 ```
+
+### Cyberpunk Web Dashboard
+
+Launch the interactive local dashboard to inspect live clipboard telemetry, tokens, and format recovery in real time:
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/CoronRing/clipring/main/docs/assets/hero.jpg" alt="ClipRing Visual Dashboard and Cyberpunk Interface" width="820">
+</div>
 
 ---
 

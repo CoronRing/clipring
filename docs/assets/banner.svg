@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="ClipRing — The reactive clipboard input engine for Python">
+  <title>ClipRing</title>
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#0d1322"/>
+      <stop offset="100%" stop-color="#090d18"/>
+    </linearGradient>
+
+    <linearGradient id="mark-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <linearGradient id="accent-purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <radialGradient id="glow-cyan" cx="0.18" cy="0.45" r="0.6">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow-purple" cx="0.82" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#7928ca" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="rule-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="70%" stop-color="#7928ca"/>
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filter Glow -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 800; }
+      .sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" fill="url(#bg-grad)"/>
+  <rect width="1200" height="360" fill="url(#glow-cyan)"/>
+  <rect width="1200" height="360" fill="url(#glow-purple)"/>
+
+  <!-- Subtle Cyberpunk Background Grid -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.22">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="180" y1="0" x2="180" y2="360"/>
+    <line x1="360" y1="0" x2="360" y2="360"/>
+    <line x1="540" y1="0" x2="540" y2="360"/>
+    <line x1="720" y1="0" x2="720" y2="360"/>
+    <line x1="900" y1="0" x2="900" y2="360"/>
+    <line x1="1080" y1="0" x2="1080" y2="360"/>
+  </g>
+
+  <!-- Logo Mark Container -->
+  <g transform="translate(68, 88)">
+    <!-- Outer Glow Ring -->
+    <circle cx="92" cy="92" r="90" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.5"/>
+    <circle cx="92" cy="92" r="82" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- App Icon Rounded Box -->
+    <rect x="8" y="8" width="168" height="168" rx="38" fill="url(#mark-grad)"/>
+    <rect x="8" y="8" width="168" height="168" rx="38" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.35"/>
+
+    <!-- Clipboard Silhouette Inside Box -->
+    <rect x="50" y="44" width="84" height="106" rx="14" fill="#0b101d" opacity="0.92"/>
+    <rect x="66" y="34" width="52" height="20" rx="8" fill="#00f2fe"/>
+    <circle cx="92" cy="44" r="5" fill="#0b101d"/>
+
+    <!-- Clip Lines -->
+    <line x1="64" y1="74" x2="120" y2="74" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+    <line x1="64" y1="94" x2="120" y2="94" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+    <line x1="64" y1="114" x2="104" y2="114" stroke="#00f2fe" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Orbiting Ring Nodes -->
+    <circle cx="92" cy="2" r="7" fill="#00f2fe" filter="url(#neon-glow)"/>
+    <circle cx="182" cy="92" r="6" fill="#a855f7" filter="url(#neon-glow)"/>
+    <circle cx="2" cy="92" r="6" fill="#38bdf8" filter="url(#neon-glow)"/>
+  </g>
+
+  <!-- Main Title -->
+  <text class="title" x="286" y="162" font-size="78" fill="#f8fafc" letter-spacing="-1">ClipRing</text>
+  
+  <!-- Version Tag -->
+  <rect x="624" y="108" width="76" height="28" rx="14" fill="#0284c7" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.2"/>
+  <text class="mono" x="662" y="127" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">v0.2.0</text>
+
+  <!-- Divider Line -->
+  <rect x="288" y="184" width="380" height="3" rx="1.5" fill="url(#rule-grad)"/>
+
+  <!-- Subtitle Lines -->
+  <text class="sub" x="288" y="224" font-size="24" fill="#38bdf8" font-weight="600">The reactive clipboard input engine for Python</text>
+  <text class="sub" x="288" y="258" font-size="18" fill="#94a3b8">Multi-format event watcher · Browser WebP recovery · Privacy-first</text>
+
+  <!-- Tech Badges / Pills -->
+  <g transform="translate(288 288)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="124" height="30" rx="15" fill="#0f172a" stroke="#0284c7" stroke-width="1.2"/>
+    <circle cx="16" cy="15" r="4" fill="#38bdf8"/>
+    <text class="mono" x="68" y="20" font-size="13" fill="#cbd5e1" text-anchor="middle">Python 3.10+</text>
+
+    <!-- Pill 2 -->
+    <rect x="136" y="0" width="120" height="30" rx="15" fill="#0f172a" stroke="#4f46e5" stroke-width="1.2"/>
+    <circle cx="152" cy="15" r="4" fill="#818cf8"/>
+    <text class="mono" x="202" y="20" font-size="13" fill="#cbd5e1" text-anchor="middle">Typed Strict</text>
+
+    <!-- Pill 3 -->
+    <rect x="268" y="0" width="154" height="30" rx="15" fill="#0f172a" stroke="#7c3aed" stroke-width="1.2"/>
+    <circle cx="284" cy="15" r="4" fill="#c084fc"/>
+    <text class="mono" x="352" y="20" font-size="13" fill="#cbd5e1" text-anchor="middle">Windows &amp; macOS</text>
+
+    <!-- Pill 4 -->
+    <rect x="434" y="0" width="144" height="30" rx="15" fill="#0f172a" stroke="#059669" stroke-width="1.2"/>
+    <circle cx="450" cy="15" r="4" fill="#34d399"/>
+    <text class="mono" x="512" y="20" font-size="13" fill="#cbd5e1" text-anchor="middle">Zero Lock-in</text>
+  </g>
+
+  <!-- Decorative Pipeline Flow Graphic (Right Side) -->
+  <g transform="translate(850, 72)">
+    <!-- Stream Flow Connection Curves -->
+    <path d="M 40 50 C 90 50, 110 90, 160 90" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="5 5" opacity="0.6"/>
+    <path d="M 40 120 C 90 120, 110 100, 160 100" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="5 5" opacity="0.6"/>
+    <path d="M 40 190 C 90 190, 110 110, 160 110" fill="none" stroke="#ec4899" stroke-width="2" stroke-dasharray="5 5" opacity="0.6"/>
+
+    <!-- Event Card 1: Text -->
+    <g transform="translate(0, 30)">
+      <rect width="130" height="38" rx="8" fill="#131b2e" stroke="#00f2fe" stroke-width="1.2"/>
+      <text class="mono" x="12" y="24" font-size="12" font-weight="700" fill="#00f2fe">[TEXT]</text>
+      <text class="mono" x="66" y="24" font-size="11" fill="#94a3b8">:ask prompt</text>
+    </g>
+
+    <!-- Event Card 2: Image WebP -->
+    <g transform="translate(0, 100)">
+      <rect width="130" height="38" rx="8" fill="#131b2e" stroke="#a855f7" stroke-width="1.2"/>
+      <text class="mono" x="12" y="24" font-size="12" font-weight="700" fill="#a855f7">[IMAGE]</text>
+      <text class="mono" x="70" y="24" font-size="11" fill="#94a3b8">WebP / GIF</text>
+    </g>
+
+    <!-- Event Card 3: Files -->
+    <g transform="translate(0, 170)">
+      <rect width="130" height="38" rx="8" fill="#131b2e" stroke="#ec4899" stroke-width="1.2"/>
+      <text class="mono" x="12" y="24" font-size="12" font-weight="700" fill="#ec4899">[FILES]</text>
+      <text class="mono" x="66" y="24" font-size="11" fill="#94a3b8">3 captures</text>
+    </g>
+
+    <!-- Core Engine Central Node -->
+    <g transform="translate(160, 58)">
+      <rect width="120" height="94" rx="16" fill="#0f172a" stroke="url(#mark-grad)" stroke-width="2"/>
+      <circle cx="60" cy="36" r="14" fill="#00f2fe" fill-opacity="0.2" stroke="#00f2fe" stroke-width="1.5"/>
+      <polygon points="56,30 68,36 56,42" fill="#00f2fe"/>
+      <text class="mono" x="60" y="66" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle">EVENT ENGINE</text>
+      <text class="mono" x="60" y="80" font-size="9.5" fill="#38bdf8" text-anchor="middle">dedup · hooks</text>
+    </g>
+  </g>
+</svg>
